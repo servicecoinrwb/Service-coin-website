@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Coin - Whitepaper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+        .btn-primary {
+            @apply bg-black text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 transition-colors duration-300;
+        }
+        .btn-secondary {
+            @apply bg-transparent text-black border border-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors duration-300;
+        }
+        .prose h3 { @apply text-2xl font-semibold mt-10 mb-4 tracking-tight; }
+        .prose h4 { @apply text-xl font-semibold mt-8 mb-3 tracking-tight; }
+        .prose p, .prose li { @apply text-gray-600 leading-relaxed; }
+        .prose a { @apply text-black font-medium border-b border-gray-300 hover:border-black transition-colors; }
+        .prose strong { @apply font-semibold text-black; }
+        .prose ul { @apply list-disc list-inside space-y-2 my-5; }
+        .prose code { @apply bg-gray-100 text-sm rounded px-2 py-1 font-mono break-all border border-gray-200; }
+        .sidebar-link {
+            @apply block text-gray-500 hover:text-black py-1;
+        }
+        .sidebar-link.active {
+            @apply text-black font-semibold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html">
+                    <img src="https://images.squarespace-cdn.com/content/v1/679f0671ab24eb0464140c44/5d7925b6-6845-4daa-b832-130180999070/black_logo_transparent_background.png?format=1500w" alt="Service Logo" class="h-8 w-auto">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#apps" class="text-gray-700 hover:text-black transition-colors">App Development</a>
+                    <a href="index.html#staking" class="text-gray-700 hover:text-black transition-colors">Staking</a>
+                    <a href="whitepaper.html" class="text-gray-700 hover:text-black transition-colors font-bold">Whitepaper</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="mailto:info@service.money" class="btn-secondary">Contact</a>
+                </div>
+
+                 <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-black focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t border-gray-200 bg-white">
+            <a href="index.html#apps" class="block py-2 text-gray-700 hover:text-black">App Development</a>
+            <a href="index.html#staking" class="block py-2 text-gray-700 hover:text-black">Staking</a>
+            <a href="whitepaper.html" class="block py-2 text-gray-700 hover:text-black">Whitepaper</a>
+            <a href="mailto:info@service.money" class="block mt-2 text-center btn-secondary w-full">Contact</a>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <aside class="hidden lg:block lg:col-span-3 py-12">
+                <div class="sticky top-28 self-start">
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">On this page</h3>
+                    <nav id="sidebar-nav">
+                        <ul class="space-y-2">
+                            <li><a href="#core-concepts" class="sidebar-link">Core Concepts</a></li>
+                            <li><a href="#for-participants" class="sidebar-link">For Participants</a></li>
+                            <li><a href="#tokenomics" class="sidebar-link">Tokenomics</a></li>
+                            <li><a href="#security" class="sidebar-link">Security & Governance</a></li>
+                            <li><a href="#official-links" class="sidebar-link">Official Links & Contracts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="lg:col-span-9 py-12">
+                <div class="max-w-4xl mx-auto prose">
+                    <h1 class="text-4xl md:text-5xl font-extrabold">Service Coin Whitepaper</h1>
+                    <p class="text-lg text-gray-500 mt-4 border-b border-gray-200 pb-8">Our mission is to create a sustainable, transparent, and resilient DeFi ecosystem powered by real profits, not speculative hype.</p>
+
+                    <section id="core-concepts">
+                        <h3 >1. Core Concepts</h3>
+                        <h4>What is Service Coin?</h4>
+                        <p>Service Coin is a decentralized protocol built on Arbitrum that allows SRV token holders to earn yield generated from a diversified portfolio of real-world assets and services. The ecosystem is designed to be deflationary, with value driven by real business income rather than inflationary token rewards.</p>
+                        
+                        <h4>The Real Asset Income Fund</h4>
+                        <p>The heart of our ecosystem is the <strong>Real Asset Income Fund</strong>. This treasury is powered by revenue from our app development services for real-world businesses. A portion of this revenue is directed into the fund, fueling the ecosystem and creating sustainable yield for SRV holders.</p>
+                    </section>
+
+                    <section id="for-participants">
+                        <h3>2. For Participants</h3>
+                        <h4>How to Get SRV</h4>
+                        <p>The primary marketplace for acquiring the SRV token is on <strong>Camelot DEX</strong> on the Arbitrum network. <a href="https://app.camelot.exchange/?token2=0x057ba66c2109Fd4487F0781E0203B71fd77a6341&swap=v2" target="_blank" rel="noopener noreferrer">Trade on Camelot</a></p>
+                        <p>If your funds are on another chain, you may need to bridge them to Arbitrum first. We recommend using our partner, <strong>rhino.fi</strong>. <a href="https://app.rhino.fi/bridge?chainOut=ARBITRUM" target="_blank" rel="noopener noreferrer">Bridge to Arbitrum</a></p>
+                        
+                        <h4>Staking SRV for Real Yield</h4>
+                        <p>The most direct way to earn is by staking your SRV tokens in our dApp.</p>
+                        <ul>
+                            <li><strong>The Process:</strong> When you stake your SRV, you receive <strong>sREV (Staked Service Revenue)</strong> in return. `sREV` is your liquid receipt token; it represents your share of the staking pool and is what earns the rewards.</li>
+                            <li><strong>The Rewards:</strong> Real-yield rewards are paid out periodically, funded by the profits from our app development services.</li>
+                            <li><strong>Unstaking:</strong> To get your original SRV back, you simply convert your `sREV` back to `SRV` through the dApp.</li>
+                        </ul>
+                        <a href="https://www.servicerevenue.net/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-4 no-underline">Launch Staking App</a>
+                    </section>
+                    
+                    <section id="tokenomics">
+                        <h3>3. Tokenomics</h3>
+                        <ul>
+                            <li><strong>Total Supply:</strong> 21,000,000 SRV (Fixed Cap)</li>
+                            <li><strong>Circulating at Launch:</strong> 18,330,000 SRV</li>
+                            <li><strong>Launch Burn:</strong> A 12.7% burn was conducted at launch to increase scarcity.</li>
+                            <li><strong>Allocations:</strong> Token allocations are directed towards ecosystem growth, business onboarding, and partnerships. There is no inflationary mechanism.</li>
+                        </ul>
+                    </section>
+
+                    <section id="security">
+                        <h3>4. Security & Governance</h3>
+                        <ul>
+                            <li><strong>Legal Structure:</strong> Service Coin operates under a dual-entity structure for maximum compliance: a <strong>Wyoming DAO LLC</strong> for on-chain governance and a <strong>Delaware LLC</strong> for off-chain operations.</li>
+                            <li><strong>Smart Contracts:</strong> All protocol contracts are publicly verifiable on Arbiscan.</li>
+                            <li><strong>Governance:</strong> Governance is conducted via <strong>Snapshot</strong>, where `sREV` holders can vote on proposals. <a href="https://snapshot.box/#/s:servicecoin.eth" target="_blank" rel="noopener noreferrer">Vote on Snapshot</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section id="official-links">
+                        <h3>5. Official Links & Contracts</h3>
+                        <ul>
+                            <li><strong>SRV Contract:</strong> <code>0x057ba66c2109fd4487f0781e0203b71fd77a6341</code> <a href="https://arbiscan.io/token/0x057ba66c2109fd4487f0781e0203b71fd77a6341" target="_blank" rel="noopener noreferrer">(View on Arbiscan)</a></li>
+                            <li><strong>sREV Contract:</strong> <code>0x2f745da2fa453ee76c756fadcc081f59284b2a40</code> <a href="https://arbiscan.io/address/0x2F745Da2FA453ee76c756fADcc081f59284B2a40#code" target="_blank" rel="noopener noreferrer">(View on Arbiscan)</a></li>
+                            <li><strong>Treasury Wallet:</strong> <a href="https://debank.com/profile/0xcfe077e6f7554b1724546e02624a0832d1f4557a" target="_blank" rel="noopener noreferrer">View on DeBank</a></li>
+                            <li><strong>Community & Quests:</strong> <a href="https://app.galxe.com/quest/service?sort=Trending" target="_blank" rel="noopener noreferrer">Participate on Galxe</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 bg-gray-50">
+         <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo and mission -->
+                <div class="md:col-span-1">
+                    <a href="index.html">
+                         <img src="https://images.squarespace-cdn.com/content/v1/679f0671ab24eb0464140c44/5d7925b6-6845-4daa-b832-130180999070/black_logo_transparent_background.png?format=1500w" alt="Service Logo" class="h-8 w-auto">
+                    </a>
+                    <p class="mt-4 text-gray-500">Custom app solutions.</p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="https://x.com/ServiceCoin21" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-black"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="mt-8 md:mt-0">
+                    <h3 class="font-semibold text-gray-900">Services</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="index.html#apps" class="text-gray-500 hover:text-gray-900">For Businesses</a></li>
+                        <li><a href="index.html#staking" class="text-gray-500 hover:text-gray-900">Staking</a></li>
+                    </ul>
+                </div>
+
+                <div class="mt-8 md:mt-0">
+                    <h3 class="font-semibold text-gray-900">Company</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-500 hover:text-gray-900">About Us</a></li>
+                        <li><a href="mailto:info@service.money" class="text-gray-500 hover:text-gray-900">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="mt-8 md:mt-0">
+                    <h3 class="font-semibold text-gray-900">Legal</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-500 hover:text-gray-900">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-gray-900">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+                <p>&copy; 2024 Service. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sidebar scrollspy
+        window.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('#sidebar-nav a');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+    </script>
+</body>
+</html>
+
