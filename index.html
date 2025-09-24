@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service - Apps & Revenue Share Staking</title>
+    <title>Service - The Future of Money</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,9 +25,6 @@
         .btn-secondary {
             @apply bg-transparent text-black border border-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors duration-300;
         }
-        .prose h3 { @apply text-xl font-semibold mt-6 mb-2; }
-        .prose p { @apply text-gray-600 mb-4; }
-        .prose a { @apply text-black font-semibold underline; }
     </style>
 </head>
 <body class="antialiased">
@@ -64,7 +61,7 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t border-gray-200">
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t border-gray-200 bg-white">
             <a href="#apps" class="block py-2 text-gray-700 hover:text-black">App Development</a>
             <a href="#staking" class="block py-2 text-gray-700 hover:text-black">Staking</a>
             <a href="whitepaper.html" class="block py-2 text-gray-700 hover:text-black">Whitepaper</a>
@@ -72,85 +69,95 @@
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="apps" class="hero-bg py-24 sm:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
-                    Powering Service Businesses with Custom Apps
-                </h1>
-                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">
-                    We build powerful applications for service businesses and offer a unique revenue share through our staking platform.
-                </p>
-                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://www.servicerevenue.net/" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto">Stake Now</a>
-                    <a href="mailto:info@service.money" class="btn-secondary w-full sm:w-auto">Get a Quote</a>
+    <!-- Hero Section -->
+    <section class="hero-bg py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Custom Apps & Revenue Sharing</h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">We build powerful, custom applications for service-based businesses and share the revenue with you through our innovative staking platform.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="staking_dapp.html" class="btn-primary">Launch DApp</a>
+                <a href="mailto:info@service.money" class="btn-secondary">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Staking Section -->
+    <section id="staking" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Earn Rewards with Service Staking</h2>
+                <p class="mt-4 text-lg text-gray-600">Participate in our ecosystem and earn a share of the revenue generated from our app development services. Our staking process is simple, transparent, and rewarding.</p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="border border-gray-200 p-8 rounded-lg">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-gray-100 text-black mx-auto">
+                        <span class="font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="mt-6 font-semibold text-lg">Buy SERVICE Coin</h3>
+                    <p class="mt-2 text-gray-600">Acquire SERVICE tokens on the Arbitrum network through a decentralized exchange like Camelot.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="border border-gray-200 p-8 rounded-lg">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-gray-100 text-black mx-auto">
+                        <span class="font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="mt-6 font-semibold text-lg">Stake and Hold SREV</h3>
+                    <p class="mt-2 text-gray-600">Stake your SERVICE tokens in our secure dApp to receive SREV, your liquid staking receipt.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="border border-gray-200 p-8 rounded-lg">
+                     <div class="flex items-center justify-center h-12 w-12 rounded-full bg-gray-100 text-black mx-auto">
+                        <span class="font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="mt-6 font-semibold text-lg">Earn Real Rewards</h3>
+                    <p class="mt-2 text-gray-600">Receive a 5% APR and a proportional share of the revenue generated from our business operations.</p>
                 </div>
             </div>
-        </section>
+             <div class="mt-12 text-center">
+                <a href="staking_dapp.html" class="btn-primary w-full sm:w-auto">Stake Now</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Staking Section -->
-        <section id="staking" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold">Earn Rewards with Service Staking</h2>
-                    <p class="mt-4 text-lg text-gray-600">Our staking process is simple. Buy SERVICE coin on Arbitrum, stake it to receive SREV (our liquid staking token), and start earning passive income.</p>
+    <!-- App Showcase Section -->
+    <section id="apps" class="py-20 md:py-28">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Custom Apps for Service Businesses</h2>
+                <p class="mt-4 text-lg text-gray-600">We specialize in creating tailor-made applications that streamline operations, enhance customer engagement, and drive growth for service-based businesses.</p>
+            </div>
+             <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://i.imgur.com/oAdasp7.png" alt="App Screenshot 1" class="w-full h-auto object-cover">
                 </div>
-
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                    <!-- Step 1 -->
-                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
-                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-white mx-auto">
-                           <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-                        </div>
-                        <h3 class="mt-5 text-xl font-semibold">Buy SERVICE Coin</h3>
-                        <p class="mt-2 text-gray-600">Acquire SERVICE coin on the Arbitrum network to get started.</p>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
-                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-white mx-auto">
-                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
-                        <h3 class="mt-5 text-xl font-semibold">Stake & Hold SREV</h3>
-                        <p class="mt-2 text-gray-600">Stake your tokens and receive SREV, our liquid staking token, in your wallet.</p>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
-                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-white mx-auto">
-                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 16v-1m0-1c-1.11 0-2.08-.402-2.599-1M12 16h.01M12 16c1.657 0 3-.895 3-2s-1.343-2-3-2-3-.895-3-2 1.343-2 3-2m0 8c-1.11 0-2.08.402-2.599 1"></path></svg>
-                        </div>
-                        <h3 class="mt-5 text-xl font-semibold">Earn Rewards</h3>
-                        <p class="mt-2 text-gray-600">Receive a 5% APR and a share of the platform's revenue directly to your wallet.</p>
-                    </div>
-                </div>
-                <div class="mt-12 text-center">
-                     <a href="https://www.servicerevenue.net/" target="_blank" rel="noopener noreferrer" class="btn-primary">Start Staking Now</a>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://i.imgur.com/lKqCLtn.png" alt="App Screenshot 2" class="w-full h-auto object-cover">
                 </div>
             </div>
-        </section>
-        
-        <!-- CTA Section -->
-        <section class="py-24 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold">Ready to build your app?</h2>
-                <p class="mt-4 max-w-xl mx-auto text-lg text-gray-600">
-                    Let's discuss your project. Contact us today for a free, no-obligation consultation and quote.
-                </p>
-                <div class="mt-8">
-                    <a href="mailto:info@service.money" class="btn-primary">Get a Free Quote</a>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-6 text-center">
+             <h2 class="text-3xl md:text-4xl font-bold">Ready to build your app?</h2>
+             <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Let's discuss your project and how we can help you achieve your business goals.</p>
+             <div class="mt-8">
+                 <a href="mailto:info@service.money" class="btn-primary">Contact Us Today</a>
+             </div>
+        </div>
+    </section>
 
-    </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200">
-        <div class="container mx-auto px-6 py-12">
+    <footer class="border-t border-gray-200 bg-gray-50">
+         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Logo and mission -->
                 <div class="md:col-span-1">
-                    <a href="#">
+                    <a href="index.html">
                          <img src="https://images.squarespace-cdn.com/content/v1/679f0671ab24eb0464140c44/5d7925b6-6845-4daa-b832-130180999070/black_logo_transparent_background.png?format=1500w" alt="Service Logo" class="h-8 w-auto">
                     </a>
                     <p class="mt-4 text-gray-500">Custom app solutions.</p>
@@ -190,7 +197,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -200,7 +207,6 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
-
 </body>
 </html>
 
