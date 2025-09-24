@@ -25,6 +25,9 @@
         .btn-secondary {
             @apply bg-transparent text-black border border-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors duration-300;
         }
+        .prose h3 { @apply text-xl font-semibold mt-6 mb-2; }
+        .prose p { @apply text-gray-600 mb-4; }
+        .prose a { @apply text-black font-semibold underline; }
     </style>
 </head>
 <body class="antialiased">
@@ -34,7 +37,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="#">
+                <a href="index.html">
                     <img src="https://images.squarespace-cdn.com/content/v1/679f0671ab24eb0464140c44/5d7925b6-6845-4daa-b832-130180999070/black_logo_transparent_background.png?format=1500w" alt="Service Logo" class="h-8 w-auto">
                 </a>
 
@@ -42,6 +45,7 @@
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#apps" class="text-gray-700 hover:text-black transition-colors">App Development</a>
                     <a href="#staking" class="text-gray-700 hover:text-black transition-colors">Staking</a>
+                    <a href="whitepaper.html" class="text-gray-700 hover:text-black transition-colors">Whitepaper</a>
                 </nav>
 
                 <!-- CTA Button -->
@@ -63,6 +67,7 @@
         <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t border-gray-200">
             <a href="#apps" class="block py-2 text-gray-700 hover:text-black">App Development</a>
             <a href="#staking" class="block py-2 text-gray-700 hover:text-black">Staking</a>
+            <a href="whitepaper.html" class="block py-2 text-gray-700 hover:text-black">Whitepaper</a>
             <a href="mailto:info@service.money" class="block mt-2 text-center btn-secondary w-full">Contact</a>
         </div>
     </header>
@@ -78,7 +83,7 @@
                     We build powerful applications for service businesses and offer a unique revenue share through our staking platform.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://www.servicerevenue.net/" class="btn-primary w-full sm:w-auto">Stake Now</a>
+                    <a href="https://www.servicerevenue.net/" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto">Stake Now</a>
                     <a href="mailto:info@service.money" class="btn-secondary w-full sm:w-auto">Get a Quote</a>
                 </div>
             </div>
@@ -119,13 +124,13 @@
                     </div>
                 </div>
                 <div class="mt-12 text-center">
-                     <a href="https://www.servicerevenue.net/" class="btn-primary">Start Staking Now</a>
+                     <a href="https://www.servicerevenue.net/" target="_blank" rel="noopener noreferrer" class="btn-primary">Start Staking Now</a>
                 </div>
             </div>
         </section>
         
         <!-- CTA Section -->
-        <section class="py-24">
+        <section class="py-24 bg-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold">Ready to build your app?</h2>
                 <p class="mt-4 max-w-xl mx-auto text-lg text-gray-600">
@@ -140,7 +145,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200">
+    <footer class="border-t border-gray-200">
         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Logo and mission -->
