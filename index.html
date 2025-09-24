@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f7;
@@ -47,7 +50,7 @@
 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="mailto:info@service.money" class="btn-secondary">Contact</a>
+                    <a href="#contact" class="btn-secondary">Contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -65,7 +68,7 @@
             <a href="#apps" class="block py-2 text-gray-700 hover:text-black">App Development</a>
             <a href="#staking" class="block py-2 text-gray-700 hover:text-black">Staking</a>
             <a href="whitepaper.html" class="block py-2 text-gray-700 hover:text-black">Whitepaper</a>
-            <a href="mailto:info@service.money" class="block mt-2 text-center btn-secondary w-full">Contact</a>
+            <a href="#contact" class="block mt-2 text-center btn-secondary w-full">Contact</a>
         </div>
     </header>
 
@@ -76,7 +79,7 @@
             <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">We build powerful, custom applications for service-based businesses and share the revenue with you through our innovative staking platform.</p>
             <div class="mt-8 flex justify-center space-x-4">
                 <a href="staking_dapp.html" class="btn-primary">Launch DApp</a>
-                <a href="mailto:info@service.money" class="btn-secondary">Get a Quote</a>
+                <a href="#contact" class="btn-secondary">Get a Quote</a>
             </div>
         </div>
     </section>
@@ -139,13 +142,37 @@
         </div>
     </section>
     
-    <!-- CTA Section -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 text-center">
-             <h2 class="text-3xl md:text-4xl font-bold">Ready to build your app?</h2>
-             <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Let's discuss your project and how we can help you achieve your business goals.</p>
-             <div class="mt-8">
-                 <a href="mailto:info@service.money" class="btn-primary">Contact Us Today</a>
+    <!-- CTA / Contact Section -->
+    <section id="contact" class="bg-white py-20">
+        <div class="container mx-auto px-6">
+             <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Ready to build your app?</h2>
+                <p class="mt-4 text-lg text-gray-600">Let's discuss your project. Fill out the form below and we'll get back to you with a free quote and consultation.</p>
+             </div>
+             <div class="mt-12 max-w-xl mx-auto">
+                 <form action="mailto:info@service.money" method="post" enctype="text/plain">
+                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                         <div>
+                             <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                             <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm">
+                         </div>
+                         <div>
+                             <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                             <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm">
+                         </div>
+                     </div>
+                     <div class="mt-6">
+                         <label for="company" class="block text-sm font-medium text-gray-700">Company (Optional)</label>
+                         <input type="text" name="company" id="company" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm">
+                     </div>
+                     <div class="mt-6">
+                         <label for="details" class="block text-sm font-medium text-gray-700">Project Details</label>
+                         <textarea name="details" id="details" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"></textarea>
+                     </div>
+                     <div class="mt-8 text-center">
+                         <button type="submit" class="btn-primary w-full sm:w-auto">Request a Quote</button>
+                     </div>
+                 </form>
              </div>
         </div>
     </section>
@@ -179,7 +206,7 @@
                     <h3 class="font-semibold text-gray-900">Company</h3>
                     <ul class="mt-4 space-y-2">
                         <li><a href="#" class="text-gray-500 hover:text-gray-900">About Us</a></li>
-                        <li><a href="mailto:info@service.money" class="text-gray-500 hover:text-gray-900">Contact</a></li>
+                        <li><a href="#contact" class="text-gray-500 hover:text-gray-900">Contact</a></li>
                     </ul>
                 </div>
 
