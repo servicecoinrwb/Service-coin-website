@@ -53,7 +53,7 @@
                     <a href="mailto:info@service.money" class="bg-transparent text-black border border-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors duration-300">Contact</a>
                 </div>
 
-                 <!-- Mobile Menu Button -->
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button-header" class="text-black focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -118,25 +118,6 @@
                         </div>
                     </div>
                     
-                    <div class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold mb-4">Real Yield System</h3>
-                        
-                         <div class="mb-6 border-b border-gray-200 pb-6">
-                            <label for="deposit-amount" class="block text-sm font-medium text-gray-600 mb-2">Deposit USDC to automatically earn a portion of the platform's real revenue as yield.</label>
-                            <div class="flex flex-col sm:flex-row gap-2">
-                                <input type="text" id="deposit-amount" placeholder="USDC Amount" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-md p-2 flex-grow focus:ring-2 focus:ring-black focus:outline-none">
-                                <button id="approve-deposit-btn" class="bg-transparent hover:bg-gray-100 text-black font-bold py-2 px-4 rounded-md transition-colors border border-gray-300">Approve</button>
-                                <button id="deposit-btn" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-md transition-colors opacity-50 cursor-not-allowed" disabled>Deposit</button>
-                            </div>
-                            <p class="text-xs text-gray-400 mt-2">First approve, then deposit. Lockup period is 30 days.</p>
-                         </div>
-                    
-                        <div class="flex flex-wrap gap-2">
-                            <button id="vault-claim-yield-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition-colors">Claim Yield</button>
-                            <button id="vault-compound-yield-btn" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-md transition-colors">Compound Yield</button>
-                            <button id="vault-withdraw-all-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors">Withdraw All</button>
-                        </div>
-                    </div>
                 </div>
                 <div class="lg:col-span-2 space-y-6">
                    <div class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
@@ -144,32 +125,6 @@
                         <p class="text-sm">Pool Balance: <span id="staking-pool-balance">0.00 USDC</span></p>
                         <p class="text-sm">Your Pending Rewards: <span id="staking-pending-rewards">0.00 USDC</span></p>
                         <button id="claim-staking-yield-btn" class="mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition-colors w-full">Claim Yield (Staking)</button>
-                    </div>
-                    <div class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold mb-4">Real Yield System Stats</h3>
-                        <div class="grid grid-cols-2 gap-4 text-center">
-                            <div>
-                                <p class="text-sm text-gray-500">Total Shares </p>
-                                <p id="platform-investor-vault-balance" class="text-lg font-mono">$0.00</p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500">Total Capital Deposited</p>
-                                <p id="platform-total-deposited" class="text-lg font-mono">$0.00</p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500">Yield Vault Balance</p>
-                                <p id="platform-yield-vault-balance" class="text-lg font-mono">$0.00</p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500">Total Fees Processed</p>
-                                <p id="platform-total-fees" class="text-lg font-mono">$0.00</p>
-                            </div>
-                           </div>
-                       <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg shadow-inner mt-4">
-                            <p class="text-lg font-bold">Your Real Yield Rewards</p>
-                            <p class="text-sm text-gray-500">USDC earned in vault</p>
-                            <p id="vault-claimable-yield" class="text-lg font-mono">$0.00</p>
-                         </div>
                     </div>
                 </div>
             </div>
@@ -260,8 +215,6 @@ document.addEventListener("DOMContentLoaded", () => {
         srev: JSON.parse(`[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]`),
         staking: JSON.parse(`[{"inputs":[],"name":"SRV","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"staked","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"unstake","outputs":[],"stateMutability":"nonpayable","type":"function"}]`),
         rewardDistributor: JSON.parse(`[{"inputs":[{"internalType":"address","name":"user","type":"address"}],"name":"viewPending","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"viewRewardPoolBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"claim","outputs":[],"stateMutability":"nonpayable","type":"function"}]`),
-        investorVault: JSON.parse(`[{"inputs":[{"internalType":"address","name":"investor","type":"address"}],"name":"claimableYield","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"investor","type":"address"}],"name":"getInvestorInfo","outputs":[{"internalType":"uint256","name":"share","type":"uint256"},{"internalType":"uint256","name":"claimable","type":"uint256"},{"internalType":"uint256","name":"claimed","type":"uint256"},{"internalType":"uint256","name":"unlockTime","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getVaultTotals","outputs":[{"internalType":"uint256","name":"totalUSDC","type":"uint256"},{"internalType":"uint256","name":"totalSharesMinted","type":"uint256"},{"internalType":"uint256","name":"totalYield","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalDeposits","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"claimYield","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"compoundYield","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"shareAmount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"shares","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]`),
-        yieldVault: JSON.parse(`[{"inputs":[],"name":"getVaultBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalFeesAccumulatedInVault","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]`),
     };
 
     // --- UI Elements ---
@@ -307,35 +260,23 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const srevReader = new ethers.Contract(addresses.srev, abis.srev, readProvider);
             const rewardDistributorReader = new ethers.Contract(addresses.rewardDistributor, abis.rewardDistributor, readProvider);
-            const investorVaultReader = new ethers.Contract(addresses.investorVault, abis.investorVault, readProvider);
-            const yieldVaultReader = new ethers.Contract(addresses.yieldVault, abis.yieldVault, readProvider);
             const stakingVaultReader = new ethers.Contract(addresses.stakingVault, abis.staking, readProvider);
             
             srvTokenAddress = await stakingVaultReader.SRV();
             const srvReader = new ethers.Contract(srvTokenAddress, abis.erc20, readProvider);
 
             const [
-                srevBal, srvBal, vaultInfo, vaultTotals, yieldVaultBalance, totalFees,
+                srevBal, srvBal,
                 stakingPoolBalance, stakingPendingRewards
             ] = await Promise.all([
                 srevReader.balanceOf(currentAddress),
                 srvReader.balanceOf(currentAddress),
-                investorVaultReader.getInvestorInfo(currentAddress),
-                investorVaultReader.getVaultTotals(),
-                yieldVaultReader.getVaultBalance(),
-                yieldVaultReader.totalFeesAccumulatedInVault(),
                 rewardDistributorReader.viewRewardPoolBalance(),
                 rewardDistributorReader.viewPending(currentAddress),
             ]);
 
             document.getElementById("srev-balance").innerText = parseFloat(ethers.formatUnits(srevBal, 18)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
             document.getElementById("srv-balance").innerText = parseFloat(ethers.formatUnits(srvBal, 18)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
-            document.getElementById("vault-claimable-yield").innerText = formatCurrency(ethers.formatUnits(vaultInfo.claimable, 6));
-            
-            document.getElementById("platform-investor-vault-balance").innerText = formatCurrency(ethers.formatUnits(vaultTotals.totalSharesMinted, 6));
-            document.getElementById("platform-total-deposited").innerText = formatCurrency(ethers.formatUnits(vaultTotals.totalUSDC, 6));
-            document.getElementById("platform-yield-vault-balance").innerText = formatCurrency(ethers.formatUnits(yieldVaultBalance, 6));
-            document.getElementById("platform-total-fees").innerText = formatCurrency(ethers.formatUnits(totalFees, 6));
             
             document.getElementById("staking-pool-balance").innerText = `${parseFloat(ethers.formatUnits(stakingPoolBalance, 6)).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} USDC`;
             document.getElementById("staking-pending-rewards").innerText = `${parseFloat(ethers.formatUnits(stakingPendingRewards, 18)).toLocaleString(undefined, {minimumFractionDigits: 4, maximumFractionDigits: 4})} USDC`;
@@ -403,74 +344,6 @@ document.addEventListener("DOMContentLoaded", () => {
             () => stakingContract.unstake(stakedAmount),
             "Unstake successful!",
             "Unstaking SRV"
-        );
-    });
-    
-    // --- USDC Deposit Event Listeners ---
-    document.getElementById('approve-deposit-btn').addEventListener('click', async () => {
-        const amount = document.getElementById('deposit-amount').value;
-        if (!amount || isNaN(amount) || parseFloat(amount) <= 0) return showNotification("Please enter a valid amount.", true);
-        
-        const usdcContract = new ethers.Contract(addresses.usdc, abis.erc20, signer);
-        await handleTransaction(
-            () => usdcContract.approve(addresses.investorVault, ethers.parseUnits(amount, 6)),
-            "Approval successful! You can now deposit.",
-            "Approving USDC"
-        );
-        document.getElementById('deposit-btn').disabled = false;
-        document.getElementById('deposit-btn').classList.remove('opacity-50', 'cursor-not-allowed');
-    });
-
-    document.getElementById('deposit-btn').addEventListener('click', async () => {
-        const amount = document.getElementById('deposit-amount').value;
-        if (!amount || isNaN(amount) || parseFloat(amount) <= 0) return showNotification("Please enter a valid amount.", true);
-        
-        const investorVaultContract = new ethers.Contract(addresses.investorVault, abis.investorVault, signer);
-        await handleTransaction(
-            () => investorVaultContract.deposit(ethers.parseUnits(amount, 6)),
-            "Deposit successful!",
-            "Depositing USDC"
-        );
-    });
-
-    // --- Real Yield System Event Listeners ---
-    document.getElementById('vault-claim-yield-btn').addEventListener('click', async () => {
-        const investorVaultContract = new ethers.Contract(addresses.investorVault, abis.investorVault, signer);
-        await handleTransaction(
-            () => investorVaultContract.claimYield(),
-            "Yield claimed successfully!",
-            "Claiming Yield"
-        );
-    });
-
-    document.getElementById('vault-compound-yield-btn').addEventListener('click', async () => {
-        const investorVaultContract = new ethers.Contract(addresses.investorVault, abis.investorVault, signer);
-        await handleTransaction(
-            () => investorVaultContract.compoundYield(),
-            "Yield compounded successfully!",
-            "Compounding Yield"
-        );
-    });
-
-    document.getElementById('vault-withdraw-all-btn').addEventListener('click', async () => {
-        const investorVaultContract = new ethers.Contract(addresses.investorVault, abis.investorVault, signer);
-        const userInfo = await investorVaultContract.getInvestorInfo(currentAddress);
-        const userShares = userInfo.share;
-
-        if (userShares === 0n) {
-            return showNotification("You have no shares to withdraw.", true);
-        }
-        
-        const unlockTime = userInfo.unlockTime;
-        if (Date.now() / 1000 < unlockTime) {
-            const unlockDate = new Date(Number(unlockTime) * 1000).toLocaleString();
-            return showNotification(`Your funds are locked until ${unlockDate}.`, true);
-        }
-        
-        await handleTransaction(
-            () => investorVaultContract.withdraw(userShares),
-            "Withdrawal successful!",
-            "Withdrawing All Funds"
         );
     });
     
